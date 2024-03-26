@@ -585,7 +585,7 @@ class IPAdapterModelLoader:
 
     RETURN_TYPES = ("IPADAPTER",)
     FUNCTION = "load_ipadapter_model"
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def load_ipadapter_model(self, ipadapter_file):
         ckpt_path = folder_paths.get_full_path("ipadapter", ipadapter_file)
@@ -618,7 +618,7 @@ class InsightFaceLoader:
 
     RETURN_TYPES = ("INSIGHTFACE",)
     FUNCTION = "load_insight_face"
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def load_insight_face(self, provider):
         try:
@@ -658,7 +658,7 @@ class IPAdapterApply:
 
     RETURN_TYPES = ("MODEL",)
     FUNCTION = "apply_ipadapter"
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def apply_ipadapter(self, 
                         ipadapter, 
@@ -962,7 +962,7 @@ class PrepImageForInsightFace:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "prep_image"
 
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def prep_image(self, image, crop_position, sharpening=0.0, pad_around=True):
         if pad_around:
@@ -989,7 +989,7 @@ class PrepImageForClipVision:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "prep_image"
 
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def prep_image(self, image, interpolation="LANCZOS", crop_position="center", sharpening=0.0):
         size = (224, 224)
@@ -1018,7 +1018,7 @@ class IPAdapterEncoder:
 
     RETURN_TYPES = ("EMBEDS",)
     FUNCTION = "preprocess"
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def preprocess(self, clip_vision, image_1, ipadapter_plus, noise, weight_1, image_2=None, image_3=None, image_4=None, weight_2=1.0, weight_3=1.0, weight_4=1.0):
         weight_1 *= (0.1 + (weight_1 - 0.1))
@@ -1103,7 +1103,7 @@ class IPAdapterSaveEmbeds:
     RETURN_TYPES = ()
     FUNCTION = "save"
     OUTPUT_NODE = True
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def save(self, embeds, filename_prefix):
         full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir)
@@ -1123,7 +1123,7 @@ class IPAdapterLoadEmbeds:
 
     RETURN_TYPES = ("EMBEDS", )
     FUNCTION = "load"
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def load(self, embeds):
         path = folder_paths.get_annotated_filepath(embeds)
@@ -1142,7 +1142,7 @@ class IPAdapterBatchEmbeds:
 
     RETURN_TYPES = ("EMBEDS",)
     FUNCTION = "batch"
-    CATEGORY = "ipadapter"
+    CATEGORY = "ipadapter.old"
 
     def batch(self, embed1, embed2):
         return (torch.cat((embed1, embed2), dim=1), )

@@ -1,3 +1,9 @@
+# ComfyUI IPAdapter plus.old
+Make both versions of IPAdapter plus available on ComfyUI.
+You can use the lastest IPAdapter plus as normal.
+Freeze the last old version on Commits on Feb 14, 2024， prior to the release of ComfyUI IPAdapter V2. 
+![image](https://github.com/meimeilook/ComfyUI_IPAdapter_plus.old/blob/main/Intro.jpg)
+
 # ComfyUI IPAdapter plus
 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) reference implementation for [IPAdapter](https://github.com/tencent-ailab/IP-Adapter/) models.
 
